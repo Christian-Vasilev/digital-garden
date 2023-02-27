@@ -194,7 +194,7 @@ article {
 
     &.internal-link {
       text-decoration: none;
-      background-color: transparentize(#8f9fa9, 0.90);
+      background-color: transparentize(#FFFFFF, 0.90);
       padding: 0 0.1em;
       //margin: auto -0.1em;
       border-radius: 3px;
@@ -235,11 +235,11 @@ article {
 
   & > li > a {
     border-radius: 8px;
-    border: var(--outlinegray) 1px solid;
+    border: #FEFBE9 1px dashed;
     padding: 0.2em 0.5em;
 
     &::before {
-      content: "#";
+      content: "🧠";
       margin-right: 0.3em;
       color: var(--outlinegray);
     }
@@ -265,7 +265,7 @@ sup > a {
 }
 
 a {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.2s ease;

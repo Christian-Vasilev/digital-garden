@@ -1,4 +1,4 @@
-name: Ivanka Todorova
+name: Christian Vasilev
 enableToc: true
 openToc: true
 enableLinkPreview: true
@@ -12,7 +12,7 @@ enableContextualBacklinks: true
 enableRecentNotes: true
 enableGitHubEdit: true
 enableMermaid: true
-GitHubLink: https://github.com/fakeheal/digital-garden/tree/hugo/content
+GitHubLink: https://github.com/christian-vasilev/digital-garden/tree/hugo/content
 search:
   enableSemanticSearch: false
   operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
@@ -22,7 +22,5 @@ description:
 page_title:
   "digital garden"
 links:
-  - link_name: Mastodon
-    link: https://toot.community/@fakeheal
   - link_name: GitHub
-    link: https://github.com/fakeheal
+    link: https://github.com/christian-vasilev

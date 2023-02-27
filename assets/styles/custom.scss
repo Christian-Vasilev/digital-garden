@@ -8,15 +8,16 @@ body {
 
 
 :root {
-  --light: #f8ebd9;
-  --dark: #141021;
-  --secondary: #284b63;
-  --tertiary: #84a59d;
+  --light: #EDDBC7;
+  --dark: #A7727D;
+  --secondary: #D3756B;
+  --header: #FFFFFF;
+  --tertiary: #FFFFFF;
   --visited: #afbfc9;
   --primary: #ffc634;
-  --gray: #2e2e2e;
+  --gray: #F0997D;
   --lightgray: #f0f0f0;
-  --outlinegray: #dadada;
+  --outlinegray: #FFFFFF;
   --million-progress-bar-color: var(--secondary);
   --highlighted: #f5dfaf88;
   --drop-shadow: rgba(255, 255, 255, 0.6);
@@ -28,7 +29,7 @@ body {
   --secondary: #6b879a !important;
   --visited: #4a575e !important;
   --tertiary: #84a59d !important;
-  --primary: #f58382 !important;
+  --primary: #c3c3c3 !important;
   --gray: #d4d4d4 !important;
   --lightgray: #292633 !important;
   --outlinegray: #343434 !important;
@@ -84,16 +85,14 @@ img[alt="factor tree of 42"] {
  * header
  */
 header {
-  box-shadow: 0 1px 8px var(--drop-shadow);
-  background: rgba(252, 182, 159, 0.82);
+  background: #A7727D;
   padding: 14px 10px;
   border-radius: 12px;
   margin: 1em 0;
 
   #page-title a {
     font-size: 38px;
-    text-shadow: 4px 4px 2px var(--drop-shadow);
-    color: var(--secondary);
+    color: var(--header);
   }
 
   .hide-on-mobile {
@@ -149,15 +148,14 @@ footer {
 
   .path {
     padding: 0.2em 0.5em;
-    border-radius: 12px;
-    border: var(--outlinegray) 1px solid;
-    margin: 0 9px 9px 0;
+    border-radius: 8px;
+    border: #FEFBE9 1px dashed;
 
     a {
       &::before {
-        content: "#";
+        content: "🧠";
         margin-right: 0.3em;
-        color: var(--outlinegray);
+        color: #FFFFFF;
       }
     }
   }
