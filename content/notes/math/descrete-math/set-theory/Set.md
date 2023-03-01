@@ -32,9 +32,3 @@ Same as above, but
 * The ellipsis (...) is used to:
 	* Define a finite set (when used in the middle).
 
-
-`
-```
-asdsassadsasadsass
-```
-
