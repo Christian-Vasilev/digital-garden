@@ -4,7 +4,7 @@ tags:
 - algorithms
 ---
 
-## Definition
+## Дефиниция
 
 > Алгоритъмът на Евклид се използва за намирането на най-големият общ делител (НОД) на две естествени числа. Той е един от най-първиет публикувани алгоритми.
 > 
@@ -19,14 +19,22 @@ tags:
 
 ![Euclid Algorith](notes/assets/euclid-algorith.png)
 
+
+
+## Алгоритъм без цикъл
+
+![Euclid Algorith Without Iterations](notes/assets/euclid-alorith-without-iterations.png)
+
+### Code
+
 ```C++
 #include <iostream>  
   
 using namespace std;  
   
-int gcd(int a, int b);
-
-int gcd(int a, int b) {  
+int gcd(unsigned a, unsigned b);  
+  
+int gcd(unsigned a, unsigned b) {  
     if (b == 0) {  
         return a;  
     }  
@@ -35,9 +43,29 @@ int gcd(int a, int b) {
 }  
   
 int main() {  
-    int a = 20, b = 40;  
-    int result = gcd(a, b);  
+    unsigned a, b;  
+  
+    cout << "Enter First Number" << endl;  
+    cin >> a;  
+  
+    cout << "Enter Second Number" << endl;  
+    cin >> b;  
+  
+    unsigned result = gcd(a, b);  
   
     cout << "The GCD of " << a << " AND " << b << " = " << result << endl;  
 }
+```
+
+### Result
+```bash
+Enter First Number
+
+20
+
+Enter Second Number
+
+40
+
+The GCD of 20 AND 40 = 20
 ```
