@@ -15,7 +15,7 @@ body {
   --tertiary: #FFFFFF;
   --visited: #afbfc9;
   --primary: #ffc634;
-  --gray: #F0997D;
+  --gray: #725447;
   --lightgray: #f0f0f0;
   --outlinegray: #FFFFFF;
   --million-progress-bar-color: var(--secondary);
@@ -35,6 +35,11 @@ body {
   --outlinegray: #343434 !important;
   --highlighted: #574010;
   --drop-shadow: rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 img.adaptable {
@@ -126,6 +131,13 @@ footer {
   margin-top: 2em;
   padding-bottom: 2em;
 }
+
+strong {
+  color: #4d4949;
+  font-weight: 900;
+}
+
+
 
 @media all and (min-width: 600px) {
   header {

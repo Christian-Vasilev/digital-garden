@@ -13,30 +13,33 @@ tags:
 ```C++
 #include <iostream>  
   
-using namespace std;  
-  
-int gcd(unsigned a, unsigned b);  
-  
-int gcd(unsigned a, unsigned b) {  
-    if (b == 0) {  
-        return a;  
-    }  
-  
-    return gcd(b, a % b);  
-}  
-  
 int main() {  
-    unsigned a, b;  
+    unsigned a, b, result;  
   
-    cout << "Enter First Number" << endl;  
-    cin >> a;  
+    std::cout << "Enter First Number" << std::endl;  
+    std::cin >> a;  
   
-    cout << "Enter Second Number" << endl;  
-    cin >> b;  
+    std::cout << "Enter Second Number" << std::endl;  
+    std::cin >> b;  
   
-    unsigned result = gcd(a, b);  
   
-    cout << "The GCD of " << a << " AND " << b << " = " << result << endl;  
+    body:  
+        result = a % b;  
+  
+        if (result != 0) {  
+            goto end;  
+        }  
+  
+        a = b;  
+        b = result;  
+  
+        goto body;  
+  
+    end:  
+  
+    std::cout << "The GCD is " << result << std::endl;  
+  
+    return 0;  
 }
 ```
 
@@ -94,6 +97,7 @@ The GCD of 20 AND 40 = 20
 ```C++
 #include <iostream>  
 #include <iomanip>  
+const int SIZE = 4;  
   
 using std::string;  
   
@@ -103,34 +107,35 @@ int print(unsigned *info, unsigned size, string label) {
     for (int i = 0; i < size; i++) {  
         std::cout << std::setw(4) << info[i];  
     }  
-    std::cout << std::setw(4) << label << std::endl;  
+    std::cout << std::setw(4)    << label << std::endl;  
   
     return 1;  
 }  
   
 int main() {  
-    unsigned size = 4;  
-    unsigned numbers[4] = {5, 6, 7, 8};  
-    unsigned moreNumbers[4] = {2, 3, 4, 5};  
+    unsigned numbers[SIZE] = {5, 6, 7, 8}; // 5678  
+    unsigned moreNumbers[SIZE] = {5, 6, 7, 8}; // 2345  
   
     unsigned carry = 0;  
-    unsigned sum[4];  
-    unsigned remainder[4];  
+    unsigned sum[SIZE + 1];  
+    unsigned remainder[SIZE];  
   
-    for (int i = 0; i < size; i++) {  
-        sum[i] = numbers[i] + moreNumbers[i];  
-        remainder[i] = sum[i] % 10 != sum[i] ? sum[i] % 10 : 0;  
+    for (int i = 0; i < SIZE; i++) {  
+        int index = SIZE - (i + 1);  
+        int summedNumbers = numbers[index] + moreNumbers[index] + carry;  
   
-        carry += sum[i] + remainder[i];  
+        sum[index] = summedNumbers % 10;  
+        remainder[i] = summedNumbers / 10;  
+  
+        carry = remainder[i];  
     }  
   
-    print(numbers, size, "A");  
-    print(moreNumbers, size, "B");  
-    print(sum, size, "SUM");  
-    print(remainder, size, "REM");  
+    sum[0] = carry;  
   
-  
-    std::cout << "TOTAL SUM - " << carry << std::endl;  
+    print(numbers, SIZE, "A");  
+    print(moreNumbers, SIZE, "B");  
+    print(sum, SIZE + 1, "SUM");  
+    print(remainder, SIZE, "REM");  
 }
 ```
 
@@ -142,7 +147,7 @@ g++ main.cpp && ./a.out
 
    2   3   4   5   B
 
-   7   9  11  13 SUM
+   8   0   2   3 SUM
 
-   0   0   1   3 REM
+   1   1   1   0 REM
 ```
